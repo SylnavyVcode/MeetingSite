@@ -40,12 +40,11 @@
           <div class="col">
             <p class="fw-bold">Je recherche</p>
             <div class="form-check mb-2">
-              <input v-model="userCheck.equihomme"
+              <input  v-model="userCheck.equihomme"
                 class="form-check-input rounded-3 fs-5 "
                 type="checkbox"
                 value=""
                 id="flexCheckChecked3"
-                
               />
               <label class="form-check-label" for="flexCheckChecked">
                 un homme
@@ -99,10 +98,7 @@ export default {
         this.userCheck.equihomme=true
         this.$emit('inscrit')
       }else{
-        
-          this.selectCheck="Vous devez d'abord Selection notre genre"
-        
-        
+        this.selectCheck="Vous devez d'abord Selection notre genre"
       }
     }
   },
