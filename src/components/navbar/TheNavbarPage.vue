@@ -10,7 +10,7 @@
               <a class="nav-item nav-link text-white img-survol" href="#">Nos histoire à succès</a>
             </div>
             <div v-else class=" col-9 d-flex ">
-              <TheLoginPage></TheLoginPage>
+              <TheLoginPage @login="loginHome()"></TheLoginPage>
             </div>
 
               <div class=" col-3  d-flex justify-content-center align-items-center">
@@ -36,6 +36,9 @@ export default {
   methods: {
     showLogin(){
       this.loginstatus = !this.loginstatus
+    },
+    loginHome(){
+      this.$emit('homeLogin')
     }
   },
 }

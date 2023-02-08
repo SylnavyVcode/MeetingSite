@@ -1,9 +1,9 @@
 {
   "users":[
-    {"email": "test@gmail.com", "password":"aa", "admin":true},
-    {"email": "test1@gmail.com", "password":"aa", "admin":false}
+    {"firstName":"valmy", "lastName":"mbama", "email": "test@gmail.com", "password":"aaaaaa", "admin":true},
+    {"firstName":"sylnavy", "lastName":"mabika", "email": "test1@gmail.com", "password":"aaaaaa", "admin":false}
   ],
-  "account":[{"email": "", "password":"", "admin":false}],
+  "account":[{"firstName":"", "lastName":"", "email": "", "password":"", "admin":false}],
 
   "card":[]
 }

@@ -12,7 +12,6 @@
        <infos></infos> 
       </div>
       
-
       <!-- ========== Start slide body ========== -->
       <div class="carousel-inner" role="listbox">
           <div class="carousel-item active">
@@ -46,6 +45,7 @@
 </template>
 
 <script>
+
 import TheNavbarPage from '../navbar/TheNavbarPage.vue';
 import TheParfaitGentleman from '../composants/TheParfaitGentleman.vue';
 import infos from '../composants/infos.vue';
@@ -54,10 +54,16 @@ import TheFooterPage from '../footer/TheFooterPage.vue';
 
 export default {
   components:{TheNavbarPage, TheParfaitGentleman, infos, BonneRencontre, TheFooterPage},
+  data() {
+    return {
+      
+    }
+  },
   methods: {
     inscrit(){
       this.$router.push('/signup')
-    }
+    },
+   
   },
 }
 </script>
