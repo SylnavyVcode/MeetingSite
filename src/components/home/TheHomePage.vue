@@ -2,7 +2,7 @@
   <div>
    
     <TheNavbarPage></TheNavbarPage>
-    <TheParfaitGentleman></TheParfaitGentleman>
+    <TheParfaitGentleman @inscrit="inscrit()"></TheParfaitGentleman>
     
     <!-- ========== Start slider bar ========== -->
     
@@ -53,7 +53,12 @@ import BonneRencontre from '../composants/BonneRencontre.vue';
 import TheFooterPage from '../footer/TheFooterPage.vue';
 
 export default {
-  components:{TheNavbarPage, TheParfaitGentleman, infos, BonneRencontre, TheFooterPage}
+  components:{TheNavbarPage, TheParfaitGentleman, infos, BonneRencontre, TheFooterPage},
+  methods: {
+    inscrit(){
+      this.$router.push('/signup')
+    }
+  },
 }
 </script>
 <style scoped>

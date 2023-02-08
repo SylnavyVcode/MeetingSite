@@ -7,10 +7,13 @@
         <p class="fst-italic">Des célibataires cultivés dans votre région</p>
         <hr />
         <div class="row">
+          <span class="text-center text-danger text">{{ selectCheck }}</span>
+        </div>
+        <div class="row">
           <div class="col">
             <p class="fw-bold">Je suis</p>
             <div class="form-check mb-2">
-              <input
+              <input v-model="userCheck.femme"
                 class="form-check-input rounded-3 fs-5 "
                 type="checkbox"
                 value=""
@@ -22,7 +25,7 @@
               </label>
             </div>
             <div class="form-check">
-              <input
+              <input v-model="userCheck.homme"
                 class="form-check-input rounded-3 fs-5 "
                 type="checkbox"
                 value=""
@@ -37,7 +40,7 @@
           <div class="col">
             <p class="fw-bold">Je recherche</p>
             <div class="form-check mb-2">
-              <input
+              <input v-model="userCheck.equihomme"
                 class="form-check-input rounded-3 fs-5 "
                 type="checkbox"
                 value=""
@@ -49,7 +52,7 @@
               </label>
             </div>
             <div class="form-check">
-              <input
+              <input v-model="userCheck.equifemme"
                 class="form-check-input rounded-3 fs-5 "
                 type="checkbox"
                 value=""
@@ -64,7 +67,7 @@
         </div>
         <div class="row">
           <div class="col d-flex justify-content-center">
-            <button class="btn btn-hover btn-info mt-3 px-5 py-3 text-white rounded-0 shadow">
+            <button @click="inscrit()" class="btn btn-hover btn-info mt-3 px-5 py-3 text-white rounded-0 shadow">
               <span class="p-0 m-0 fw-bold fs-5">INSCRIPTION GRATUITE</span>
               </button>
           </div>
@@ -74,10 +77,41 @@
   </div>
 </template>
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      userCheck:{
+        femme:null,
+        homme:null,
+        equifemme:null,
+        equihomme:null,
+      },
+      selectCheck:null
+
+    }
+  },
+  methods: {
+    inscrit(){
+      if(this.userCheck.homme==true){
+        this.userCheck.equifemme=true
+        this.$emit('inscrit')
+      }else if(this.userCheck.femme==true){
+        this.userCheck.equihomme=true
+        this.$emit('inscrit')
+      }else{
+        
+          this.selectCheck="Vous devez d'abord Selection notre genre"
+        
+        
+      }
+    }
+  },
+};
 </script>
 <style>
-
+.text{
+  font-size: 12px;
+}
 p, label{
   font-size: 18px;
 }
